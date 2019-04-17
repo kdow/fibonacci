@@ -5,8 +5,15 @@
 # ....
 # e.g. 6th fibonacci number is 8
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n) where n is the input value
+# Space complexity: O(1)
 def fibonacci(n)
-  raise NotImplementedError
+  if n == nil || n < 0
+    raise ArgumentError, "Number must be positive"
+  end
+  if n < 2
+    return n
+  else
+    fibonacci(n - 1) + fibonacci(n - 2)
+  end
 end
